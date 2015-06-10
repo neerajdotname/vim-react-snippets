@@ -52,17 +52,39 @@ snippet pt
 	propTypes: {
 		${1}: React.PropTypes.${2:string}
 	},
-snippet rcc
-	var React = require('react');
+snippet rncc
+	var React = require('react-native');
+
+	var {
+	  AppRegistry,
+	  StyleSheet,
+	  Text,
+	  View,
+	  NavigatorIOS,
+	} = React;
 
 	var ${1:ClassName} = React.createClass({
 
 		render () {
 			return (
-				${0:<div />}
+				<View style={styles.container}>
+					<Text>
+						This is component $1
+					</Text>
+				</View>
 			);
 		}
 
+	});
+
+	var styles = StyleSheet.create({
+	  container: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
+		flexDirection: 'row',
+		backgroundColor: '#F5FCFF',
+	  }
 	});
 
 	module.exports = $1;
@@ -87,18 +109,17 @@ snippet state
 snippet trp
 	transferPropsTo(${1});
 
-snippet varr
-	var {
-	  AppRegistry,
-	  StyleSheet,
-	  Text,
-	  View,
-	  NavigatorIOS,
-	} = React;
+snippet rcc
+	var React = require('react');
 
-snippet varstyles
-	var styles = StyleSheet.create({
-	  container: {
-		flex: 1,
-	  }
+	var ${1:ClassName} = React.createClass({
+
+		render () {
+			return (
+				${0:<div />}
+			);
+		}
+
 	});
+
+	module.exports = $1;
